@@ -1,11 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Blog Rails App
+# Blog App
 
-> Blog app built using rails and ruby and PostgreSQL, Every user should login first and he can post a post and give like to others posts and make comments.
+> The Blog app is a fully functional website that shows the list of posts and empowers readers to interact with them by adding comments and liking posts.
 
 ## Built With
-
 - Ruby
 - Rails
 - PostgreSql
@@ -46,12 +45,6 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
