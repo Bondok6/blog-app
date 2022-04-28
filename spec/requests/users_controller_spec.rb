@@ -19,7 +19,7 @@ RSpec.describe 'Users', type: :request do
   end
 
   context 'GET /show' do
-    before(:example) { get "/users/:user_id" }
+    before(:example) { get "/users/:id" }
 
     it 'Check if response status is correct' do
       expect(response).to have_http_status(200)
