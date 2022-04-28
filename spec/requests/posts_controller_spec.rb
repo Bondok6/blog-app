@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'Posts', type: :request do 
+RSpec.describe 'Posts', type: :request do
   context 'GET /index' do
-    before(:example) { get "/users/:user_id/posts" }
+    before(:example) { get '/users/:user_id/posts' }
 
     it 'Check if response status is correct' do
       expect(response).to have_http_status(200)
@@ -14,12 +14,12 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'Check if the response body includes correct placeholder text' do
-      expect(response.body).to include('List of posts for a specific user') 
+      expect(response.body).to include('List of posts for a specific user')
     end
   end
 
   context 'GET /show' do
-    before(:example) { get "/users/:user_id/posts/:id" }
+    before(:example) { get '/users/:user_id/posts/:id' }
 
     it 'Check if response status is correct' do
       expect(response).to have_http_status(200)
@@ -31,7 +31,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'Check if the response body includes correct placeholder text' do
-      expect(response.body).to include('A specific post for a specific user') 
+      expect(response.body).to include('A specific post for a specific user')
     end
   end
 end
