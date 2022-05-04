@@ -1,1 +1,29 @@
-<h2> A specific user </h2>
+<div class="my-3 d-flex justify-content-around align-items-center flex-wrap gap-2">
+
+  <%= image_tag @user.photo, height: 100, width: 100 %>
+
+
+  <h2><%= @user.name %></h2>
+
+  <button type="button" class="btn btn-primary align-self-end">
+    Number of posts:
+    <span class="badge bg-secondary">
+      <%= @user.posts_counter ? @user.posts_counter : 0 %>
+    </span>
+  </button>
+</div>
+
+<div class="bg-secondary p-5">
+  <h2>Bio</h2>
+  <p><%= @user.bio %></p>
+</div>
+
+<ul class="list-group mt-5">
+  <% @user.posts.each do |post| %>
+    <%= render 'users/post', post: post %>
+  <% end %>
+</ul>
+
+<button type="button" class="btn btn-secondary">
+  See all posts
+</button>
