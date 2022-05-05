@@ -1,4 +1,4 @@
-<div class="my-3 border border-secondary p-2">
+<div class="my-3 border border-secondary p-4 bg-light rounded">
 
   <div class="d-flex justify-content-between">
 
@@ -30,14 +30,11 @@
 
     <ul class="list-group">
       <% if @post.comments.length > 0 %>
-        <% @post.comments.each do |comment| %>
-        <li class="list-group-item"><%= comment.author.name %> : <%= comment.text %></li>
-        <% end %>
+        <%= render 'comments' %>
       <% else %>
         <li class="list-group-item">No comments</li>
       <% end %>
     </ul>
   </div>
-
 </div>
 
