@@ -1,4 +1,4 @@
-<div class="my-3 border border-secondary p-4 bg-light rounded">
+<section class="my-3 border border-secondary p-4 bg-light rounded">
 
   <div class="d-flex justify-content-between">
 
@@ -25,7 +25,7 @@
     <%= @post.text %>
   </p>
 
-  <div> 
+  <div class="mt-5"> 
     <h4> Comments </h4>
 
     <ul class="list-group">
@@ -36,5 +36,10 @@
       <% end %>
     </ul>
   </div>
-</div>
+
+  <div class="mt-5">
+   <h4 class="mb-3">Add Comment</h4>
+    <%= render "add_comment", post: @post %>
+  </div>
+</section>
 

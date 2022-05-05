@@ -2,7 +2,7 @@
 
   <div class="bg-light p-3 rounded">
     <h2>Current User: <%= @current_user.name %></h2>
-    <%= link_to 'Create Post', {controller: 'posts', action: 'new'}, class: 'btn btn-primary' %>
+    <%= link_to 'Create Post', "/users/#{@current_user.id}/posts/new", class: 'btn btn-primary' %>
   </div>
 
   <ul class="list-group mt-5">
