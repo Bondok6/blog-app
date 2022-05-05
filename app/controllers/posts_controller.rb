@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @post = User.find(params[:user_id]).posts.find(params[:id])
   end
 
-  def new 
+  def new
     @post = Post.new
   end
 
@@ -16,11 +16,11 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to "/users/#{@post.author.id}/posts/#{@post.id}"
     else
-      render :new 
+      render :new
     end
   end
 
-  private 
+  private
 
   def post_params
     params.require(:post).permit(:title, :text)

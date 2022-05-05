@@ -7,16 +7,12 @@
     <div>
       <button type="button" class="btn btn-primary">
         Comments:
-        <span class="badge bg-secondary">
-          <%= @post.comments_counter  ? @post.comments_counter : 0 %>
-        </span>
       </button>
-      <button type="button" class="btn btn-primary">
-        Likes:
-        <span class="badge bg-secondary">
-          <%= @post.likes_counter ? @post.likes_counter  : 0 %>
-        </span>
-      </button>
+      <span class="badge bg-secondary">
+        <%= @post.comments_counter  ? @post.comments_counter : 0 %>
+      </span>
+
+      <%= render "add_like", post: @post %>
     </div>
 
   </div>
