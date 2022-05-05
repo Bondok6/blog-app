@@ -1,7 +1,6 @@
-<div class="my-3 d-flex justify-content-around align-items-center flex-wrap gap-2">
+<div class="my-3 py-3 d-flex justify-content-around align-items-center flex-wrap gap-2 bg-light rounded">
 
   <%= image_tag @user.photo, height: 100, width: 100 %>
-
 
   <h2><%= @user.name %></h2>
 
@@ -13,17 +12,17 @@
   </button>
 </div>
 
-<div class="bg-secondary p-5">
+<div class="bg-secondary p-5 bg-light rounded">
   <h2>Bio</h2>
   <p><%= @user.bio %></p>
 </div>
 
 <ul class="list-group mt-5">
   <% @user.posts.each do |post| %>
-    <%= render 'users/post', post: post %>
+    <%= render 'post', post: post %>
   <% end %>
 </ul>
 
-<a href="/users/<%= @user.id %>/posts" class="btn btn-secondary w-100 my-3">
+<a href="/users/<%= @user.id %>/posts" class="btn btn-secondary w-100 mb-5">
   See All Posts
 </a>

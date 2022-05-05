@@ -1,0 +1,3 @@
+<% @post.comments.each do |comment| %>
+  <li class="list-group-item"><%= comment.author.name %> : <%= comment.text %></li>
+<% end %>
