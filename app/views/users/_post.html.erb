@@ -1,0 +1,21 @@
+<li class="list-group-item my-3 d-flex flex-column gap-2 border-top">
+
+  <h4><%= post.title %></h4>
+
+  <p><%= post.text %></p>
+
+  <div class="align-self-end">
+    <button type="button" class="btn btn-primary">
+      Comments:
+      <span class="badge bg-secondary">
+        <%= post.comments_counter  ? post.comments_counter : 0 %>
+      </span>
+    </button>
+    <button type="button" class="btn btn-primary">
+      Likes:
+      <span class="badge bg-secondary">
+        <%= post.likes_counter ? post.likes_counter  : 0 %>
+      </span>
+    </button>
+  </div>
+</li>

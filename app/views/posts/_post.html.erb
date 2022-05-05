@@ -1,0 +1,38 @@
+<li class="list-group-item my-3 border-top">
+
+  <a href="/users/<%= @user.id %>/posts/<%= post.id %>" class="text-reset text-decoration-none">
+    <div class="d-flex flex-column gap-2">
+      <h4><%= post.title %></h4>
+
+      <p><%= post.text %></p>
+
+      <div class="align-self-end">
+        <button type="button" class="btn btn-primary">
+          Comments:
+          <span class="badge bg-secondary">
+            <%= post.comments_counter  ? post.comments_counter : 0 %>
+          </span>
+        </button>
+        <button type="button" class="btn btn-primary">
+          Likes:
+          <span class="badge bg-secondary">
+            <%= post.likes_counter ? post.likes_counter  : 0 %>
+          </span>
+        </button>
+      </div>
+
+      <h4> Comments </h4>
+  
+      <ul class="list-group">
+        <% if post.comments.length > 0 %>
+          <% post.comments.each do |comment| %>
+          <li class="list-group-item"><%= comment.author.name %> : <%= comment.text %></li>
+          <% end %>
+        <% else %>
+          <li class="list-group-item">No comments</li>
+        <% end %>
+      </ul>
+      
+    </div>
+  </a>
+</li>

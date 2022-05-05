@@ -1,1 +1,23 @@
-<h2> List of posts for a specific user</h2>
+<div class="my-3 d-flex justify-content-around align-items-center flex-wrap gap-2">
+
+  <a href="/users/<%= @user.id %>">
+    <%= image_tag @user.photo, height: 100, width: 100 %>
+  </a>
+
+
+  <h2><%= @user.name %></h2>
+
+  <button type="button" class="btn btn-primary align-self-end">
+    Number of posts:
+    <span class="badge bg-secondary">
+      <%= @user.posts_counter ? @user.posts_counter : 0 %>
+    </span>
+  </button>
+
+</div>
+
+<ul class="list-group mt-5">
+  <% @user.posts.each do |post| %>
+    <%= render 'posts/post', post: post %>
+  <% end %>
+</ul>
