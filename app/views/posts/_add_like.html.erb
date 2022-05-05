@@ -1,0 +1,6 @@
+<%= form_with url: "/users/#{post.author.id}/posts/#{post.id}/likes" do |form| %>
+  <%= form.submit "Like", class: "btn btn-primary mt-2" %>
+    <span class="badge bg-secondary p-2">
+      <%= post.likes_counter ? post.likes_counter  : 0 %>
+    </span>
+<% end %>

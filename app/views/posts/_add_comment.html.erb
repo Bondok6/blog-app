@@ -1,0 +1,11 @@
+<%= form_with(model: [ post.author, post.author.comments.build ], url: "/users/#{post.author.id}/posts/#{post.id}/comments") do |form| %>
+
+  <div class="mb-3">
+    <%= form.text_field :text, class:"form-control", placeholder:"Type a comment" %>
+  </div>
+
+  <div>
+    <%= form.submit class:'btn btn-primary' %>
+  </div>
+
+<% end %>
