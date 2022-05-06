@@ -1,12 +1,21 @@
 <%= form_with model: post do |form| %>
 
+  <% if post.errors.any? %>
+    <% post.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger" role="alert">
+        <%= message %> 
+      </div>
+    <% end %>       
+  <% end %>
+  
+
  <div class="mb-3">
     <% form.label :title %>
     <%= form.text_field :title, class:"form-control", placeholder:"Enter the Title of the Post" %>
   </div>
 
   <div class="mb-3">
-    <%= form.text_field :text, class:"form-control", placeholder:"Enter the Content of the Post" %>
+    <%= form.text_area :text, class:"form-control", placeholder:"Enter the Content of the Post" %>
   </div>
 
   <div>

@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.new(comment_params)
     @comment.post_id = params[:post_id]
     if @comment.save
+      flash[:success] = 'Comment has been added successfully'
       redirect_to user_post_path(current_user.id, params[:post_id])
     else
       render :create
