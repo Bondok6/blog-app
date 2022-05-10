@@ -8,11 +8,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
-  def after_sign_out_path_for(resource_or_scope)
+  def after_sign_out_path_for(_resource_or_scope)
     if current_user
       request.referrer
     else
       root_path
     end
-  end 
+  end
 end
