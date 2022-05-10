@@ -13,12 +13,16 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body class="bg-dark">
+  <body class="">
 
     <%= render 'shared/header' %>
 
     <main class="container">
-     <%= yield %>
+
+     <%= render 'shared/flash' %>
+
+
+      <%= yield %>
     </main>
   
 

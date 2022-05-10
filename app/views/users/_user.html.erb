@@ -1,7 +1,7 @@
 <li class="list-group-item my-3 d-flex justify-content-between flex-wrap gap-4 border-top py-3 rounded">
 
   <div class="d-flex align-items-center gap-2">
-    <%= image_tag user.photo, height: 100, width: 100 %>
+    <%= image_tag user.photo || 'https://picsum.photos/100', width: 100 %>
 
     <h2><%= user.name %></h2>
   </div>
