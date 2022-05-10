@@ -1,24 +1,15 @@
-<div class="my-3 py-3 d-flex justify-content-around align-items-center flex-wrap gap-2 bg-light rounded">
+<%= render 'user', user: @user %>
 
-  <%= image_tag @user.photo, height: 100, width: 100 %>
-
-  <h2><%= @user.name %></h2>
-
-  <button type="button" class="btn btn-primary align-self-end">
-    Number of posts:
-    <span class="badge bg-secondary">
-      <%= @user.posts_counter ? @user.posts_counter : 0 %>
-    </span>
-  </button>
-</div>
-
-<div class="bg-secondary p-5 bg-light rounded">
+<div class="bg-secondary p-5 rounded text-white">
   <h2>Bio</h2>
   <p><%= @user.bio %></p>
 </div>
 
-<ul class="list-group mt-5">
-  <% @user.posts.each do |post| %>
+
+<h2 class="text-light mt-4">The Recent Posts</h2>
+
+<ul class="list-group">
+  <% @user.recent_posts.each do |post| %>
     <%= render 'post', post: post %>
   <% end %>
 </ul>
@@ -26,3 +17,4 @@
 <a href="/users/<%= @user.id %>/posts" class="btn btn-secondary w-100 mb-5">
   See All Posts
 </a>
+
