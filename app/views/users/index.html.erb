@@ -1,10 +1,19 @@
 <section class="mt-5">
 
+  <%# Currend User %>
   <div class="bg-light p-3 rounded">
-    <h2>Current User: <%= @current_user.name %></h2>
-    <%= link_to 'Create Post', "/users/#{@current_user.id}/posts/new", class: 'btn btn-primary' %>
+
+    <h2>Hi <span class="text-primary"><%= @current_user.name %></span>, Welcome 👋</h2>
+
+    <div class="d-flex justify-content-between align-items-center">
+      <h6 class="fst-italic fw-normal"> Create a new post and share with us what's on your mind?</h6>
+     
+      <%= link_to 'Create Post', "/users/#{@current_user.id}/posts/new", class: 'btn btn-outline-primary' %>
+    </div>
+
   </div>
 
+  <%# Render All Users %>
   <ul class="list-group mt-5">
     <% @users.each do |user| %>
       <%= render 'user', user: user %>
