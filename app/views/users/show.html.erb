@@ -6,15 +6,23 @@
 </div>
 
 
-<h2 class="text-light mt-4">The Recent Posts</h2>
+<h2 class="mt-4">The Recent Posts</h2>
 
 <ul class="list-group">
+
   <% @user.recent_posts.each do |post| %>
     <%= render 'post', post: post %>
   <% end %>
 </ul>
 
-<a href="/users/<%= @user.id %>/posts" class="btn btn-secondary w-100 mb-5">
-  See All Posts
-</a>
+<% if @user.posts_counter == 0 %>
+    
+  <p class='list-group-item my-3 text-light text-center fs-5 bg-secondary'>There are no posts</p>
 
+<% else %>
+
+  <a href="/users/<%= @user.id %>/posts" class="btn btn-secondary w-100 mb-5">
+    See All Posts
+  </a>
+
+<% end %>

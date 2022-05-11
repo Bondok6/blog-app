@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    # @post = User.find(params[:user_id]).posts.find(params[:id])
   end
 
   def new
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
     post.destroy
 
     flash[:success] = 'Post has been deleted successfully'
-    redirect_to user_posts_path(post.author.id)
+    redirect_to root_path, status: :see_other
   end
 
   private

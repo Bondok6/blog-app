@@ -1,3 +1,13 @@
 <% @post.comments.each do |comment| %>
-  <li class="list-group-item"><%= comment.author.name %> : <%= comment.text %></li>
+  <li class="list-group-item d-flex gap-5 align-items-center">
+  
+    <%= comment.author.name %> : <%= comment.text %>
+
+
+    <%= button_to "Delete Comment", user_post_comment_path(comment.post.author_id, comment.post_id, comment.id), 
+        class:"btn btn-outline-danger", 
+        method: :delete 
+    %>
+      
+  </li>
 <% end %>
