@@ -1,0 +1,5 @@
+<% if can? :destroy, post %>
+
+  <%= button_to "Delete Post", user_post_path(post.author_id, post), method: :delete, class: 'btn btn-outline-danger mt-3'%>
+
+<% end %>
