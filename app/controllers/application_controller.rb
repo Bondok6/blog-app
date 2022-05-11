@@ -1,5 +1,18 @@
 class ApplicationController < ActionController::Base
-  def current_user
-    User.first
+  before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  end
+
+  def after_sign_out_path_for(_resource_or_scope)
+    if current_user
+      request.referrer
+    else
+      root_path
+    end
   end
 end
