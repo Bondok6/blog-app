@@ -2,29 +2,26 @@ require 'rails_helper'
 
 RSpec.describe 'User Show', type: :system do
   describe 'user show page' do
-
     before(:each) do
       @user = User.create! name: 'eduardo', email: 'edu@gmail.com', password: '123456', confirmed_at: Time.now
       # @user_two = User.create! name: 'carlos', email: 'carlos@gmail.com', password: '123456', confirmed_at: Time.now
 
-      @first_post = Post.create! author_id: @user.id , title: 'first_post', text: 'Hello 1'
-      @second_post = Post.create! author_id: @user.id , title: 'second_post', text: 'Hello 2'
-      @third_post = Post.create! author_id: @user.id , title: 'third_post', text: 'Hello 3'
-
+      @first_post = Post.create! author_id: @user.id, title: 'first_post', text: 'Hello 1'
+      @second_post = Post.create! author_id: @user.id, title: 'second_post', text: 'Hello 2'
+      @third_post = Post.create! author_id: @user.id, title: 'third_post', text: 'Hello 3'
 
       visit new_user_session_path
       page.fill_in 'Email', with: 'edu@gmail.com'
       page.fill_in 'Password', with: '123456'
       click_button 'Log in'
-      first(".btn-outline-secondary").click
+      first('.btn-outline-secondary').click
     end
-
 
     it 'I can see the user\'s profile picture.' do
       image = page.all('img')
       expect(image.size).to eql(1)
     end
-    
+
     it 'I can see the user\'s username.' do
       expect(page).to have_content('eduardo')
     end
@@ -44,7 +41,7 @@ RSpec.describe 'User Show', type: :system do
     end
 
     it 'I can see a button that lets me view all of a user\'s posts.' do
-      expect(page).to have_content 'See All Posts' 
+      expect(page).to have_content 'See All Posts'
     end
 
     it 'When I click a user\'s post, it redirects me to that post\'s show page.' do

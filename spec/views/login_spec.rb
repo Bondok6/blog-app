@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Login', type: :system do
   describe 'login page' do
-
     before(:each) do
       User.create! name: 'eduardo', email: 'edu@gmail.com', password: '123456', confirmed_at: Time.now
       visit new_user_session_path
@@ -21,7 +20,7 @@ RSpec.describe 'Login', type: :system do
       expect(page).to have_content('Invalid Email or password.')
     end
 
-    it 'When I click the submit button after filling in the username and the password with incorrect data, I get a detailed error' do 
+    it 'When I click the submit button after filling in the username and the password with incorrect data, I get a detailed error' do
       page.fill_in 'Email', with: 'anything@gmail.com'
       page.fill_in 'Password', with: '555555'
       click_button 'Log in'
